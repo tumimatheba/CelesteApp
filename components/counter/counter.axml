@@ -1,0 +1,13 @@
+ <view class="order-items">
+  <view class="count"> 
+    <text a:if = "{{count !== 0}}"onTap="decrease" class="minus">-</text>
+     <text>{{count}}</text> 
+    <text  onTap="increase" class="plus" >+</text>
+  </view>
+   <text class="order-item">Number of Persons</text>
+  <text class="order-item">R100 per person</text>
+</view>
+
+<button  a:if = "{{count !==0}}" onTap="buttonClick">
+  Add to Order
+</button> 

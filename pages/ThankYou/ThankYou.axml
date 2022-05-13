@@ -1,0 +1,27 @@
+<view class="cashier-container">
+  <view class="page-body">
+    <view class="left-leaves">
+      <image class="left-leaf1" src="/Assets/ThankYou/left1.png"/>
+      <image class="left-leaf2" src="/Assets/ThankYou/left2.png"/>
+    </view>
+    <view class="text">
+      <text>Thank you,</text>
+      <text>{{customers[0].name}}</text>
+      <view class="message">
+        <text class="table-message">Your order will be brought to table
+          <text class="table">{{customers[customer].table}}</text> shortly</text>
+        <text >Your invoice has been sent to
+          <text class="email">{{customers[customer].email}}</text></text>
+      </view>
+    </view>
+    <view class="right-leaves">
+      <image class="right-leaf1" src="/Assets/ThankYou/right1.png"/>
+      <image class="right-leaf2" src="/Assets/ThankYou/right2.png"/>
+    </view>
+  </view>
+  <view class="home-button">
+    <button type="primary" onTap="goHome">
+    Home
+    </button>
+  </view>
+</view>

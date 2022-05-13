@@ -1,0 +1,109 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --raleway: "Raleway", sans-serif;
+  --oleo: "Oleo Script";
+  --gold: #bf9b30;
+  --white: #e6e8ec;
+  --black: black;
+}
+
+.cashier-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  color: var(--white);
+}
+
+.page-body {
+  height: 80%;
+  display: flex;
+}
+
+.left-leaves {
+  width: 10%;
+  padding-top: 80rpx;
+}
+
+.left-leaf1 {
+  height: 50rpx;
+  width: 80rpx;
+}
+
+.left-leaf2 {
+  height: 50rpx;
+  width: 80rpx;
+  margin-top: -15rpx;
+}
+
+.text {
+  width: 80%;
+  text-align: center;
+  padding-top: 80rpx;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--oleo);
+  font-size: 50rpx;
+  text-shadow: 2px 2px var(--gold);
+}
+
+.message {
+  height: 50%;
+  text-shadow: none;
+  font-family: var(--raleway);
+  margin-top: 30rpx;
+  font-size: 40rpx;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  padding-top: 30rpx;
+}
+
+.table {
+  margin: 0 10rpx;
+  font-weight: 700;
+}
+
+.table-message {
+  margin-bottom: 30rpx;
+}
+
+.email {
+  margin: 0 10rpx;
+  font-weight: 700;
+}
+
+.right-leaves {
+  width: 10%;
+  padding-top: 80rpx;
+}
+
+.right-leaf1 {
+  height: 50rpx;
+  width: 80rpx;
+}
+
+.right-leaf2 {
+  height: 50rpx;
+  width: 80rpx;
+  margin-top: -12rpx;
+}
+
+.home-button {
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--oleo);
+  width: 60%;
+  border-radius: 60rpx;
+  border: none;
+}

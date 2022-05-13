@@ -1,0 +1,23 @@
+<view class="container">
+  <view class="top-half">
+    <view class="top-leave">
+      <image class="image1" src="/Assets/index/branch2.svg"/>
+    </view>
+    <view class="heading">
+      <text class="name" onTap=" visib">Céleste</text>
+      <view class="line"></view>
+      <view >
+        <text class="message" style=" white-space: nowrap;">It's an experience</text>
+      </view>
+    </view>
+    <view class="right-leave">
+      <image class="image2" src="/Assets/index/branch3.svg"/>
+    </view>
+  </view>
+  <view class="middle-half">
+    <text class="tasting-menu" onTap="textClick">Tasting menu</text>
+  </view>
+  <view class="bottom-half">
+    <image class="bottom-leave" src="/Assets/index/branch.svg"/>
+  </view>
+</view>

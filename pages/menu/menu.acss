@@ -1,0 +1,111 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+:root {
+  --raleway: "Raleway", sans-serif;
+  --oleo: "Oleo Script";
+  --gold: #bf9b30;
+  --white: #e6e8ec;
+}
+
+.menu-container {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-heading {
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+}
+
+.tasting {
+  font-family: var(--oleo);
+  font-size: 50rpx;
+  text-shadow: 2px 2px var(--gold);
+}
+
+.everything {
+  height: 60%;
+  padding: 60rpx 100rpx;
+  text-align: center;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 60rpx 40rpx 30rpx;
+  color: var(--white);
+  border: 3rpx solid var(--gold);
+  border-radius: 55rpx;
+}
+
+.menuItems {
+  display: flex;
+  margin: 10rpx;
+  font-size: 26rpx;
+  text-align: start;
+}
+
+.leaves {
+  height: 60rpx;
+  width: 30%;
+  position: absolute;
+  display: flex;
+  margin-top: -20rpx;
+  background: #14141f;
+  margin-left: 20%;
+}
+
+.leave {
+  height: 70rpx;
+  width: 72rpx;
+  padding: 0 30rpx;
+  display: flex;
+  margin-left: 10%;
+}
+
+#right-leave {
+  margin-top: -20rpx;
+  margin-left: -10rpx;
+  height: 50rpx;
+  width: 60rpx;
+}
+
+.order {
+  display: flex;
+  flex-direction: column;
+  height: 30%;
+  text-align: center;
+  align-items: center;
+  padding: 10rpx;
+}
+
+.order-box {
+  display: flex;
+  flex-direction: column;
+  height: 120%;
+  width: 70%;
+  background: #303030;
+  justify-content: center;
+  align-items: center;
+  border-radius: 55rpx;
+}
+
+#food {
+  font-weight: bolder;
+  font-family: var(--raleway);
+}
+
+#wine {
+  font-weight: 300;
+  font-family: var(--raleway);
+}

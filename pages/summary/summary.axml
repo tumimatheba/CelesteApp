@@ -1,0 +1,49 @@
+<view class="summary-container">
+  <view class="heading-container">
+    <text class="summary-heading">Summary</text>
+  </view>
+  <view class="item-container">
+    <view class="summary-items">
+      <view class="summary-items-top">
+        <view class="per-person">
+          <text>Tasting Menu</text>
+          <text class="price">R{{perPerson}}pp</text>
+        </view>
+        <view class="people">
+          <text >Number of Persons</text>
+          <text class="price">{{selection}}
+            <text class="no-of-people" a:if = "{{selection === 1}}">person</text>
+            <text class="no-of-people"  a:if = "{{selection > 1}}">people</text></text>
+        </view>
+        <view class="cost">
+          <text>Cost</text>
+          <text class="price">R {{cost}}.00</text>
+        </view>
+        <text class="question">Would you like to add a tip?</text>
+      </view>
+      <view class="summary-items-middle">
+        <radio-group onChange="radioChange">
+          <label class="radio" a:for="{{tips}}">
+            <radio value="{{item.percentage}}" checked="{{item.checked}}"/>
+            <text class="info">{{item.value}}</text>
+          </label>
+        </radio-group>
+        <text class="price">R {{tip}}.00</text>
+      </view>
+      <view class="summary-items-bottom">
+        <view  a:if = "{{custom !== 0}}" class="enter-amount">
+          <text>Enter your amount</text>
+          <input onInput="bindKeyInput" class="custom-tip" maxlength="5"/>
+        </view>
+        <view class="total-cost">
+          <text>Total Cost</text>
+          <text class="price" id="total">R {{total}}.00</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="payment">
+    <button type="primary" onTap="buttonTap">Pay with VodaPay
+    </button>
+  </view>
+</view>

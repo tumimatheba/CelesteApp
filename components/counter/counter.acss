@@ -1,0 +1,38 @@
+:root {
+  --raleway: "Raleway", sans-serif;
+  --oleo: "Oleo Script";
+  --gold: #bf9b30;
+  --white: #e6e8ec;
+   --black: black;
+}
+
+.order-items {
+  display: flex;
+  flex-direction: column;
+  color: var(--white);
+  justify-content: space-around;
+  padding: 4rpx;
+}
+
+.minus,
+.plus {
+  margin: 40rpx;
+  border: 3rpx solid var(--gold);
+  border-radius: 50%;
+  font-size: 30rpx;
+  padding: 0 12rpx;
+  font-family: var(--raleway);
+}
+
+.order-item {
+  margin: 8rpx;
+  font-family: var(--raleway);
+}
+
+button {
+  background: var(--white);
+  color: var(--black);
+  width: 80%;
+  border-radius: 60rpx;
+  font-family: var(--oleo);
+}

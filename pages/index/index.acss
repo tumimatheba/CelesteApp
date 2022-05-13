@@ -1,0 +1,97 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --raleway: "Raleway", sans-serif;
+  --oleo: "Oleo Script";
+  --gold: #bf9b30;
+  --white: #e6e8ec;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.top-half {
+  height: 55%;
+  display: flex;
+}
+
+.middle-half {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 10%;
+}
+
+.tasting-menu {
+  font-size: 40rpx;
+  color: var(--white);
+  font-weight: 100;
+  font-family: var(--raleway);
+}
+.bottom-half {
+  height: 35%;
+  display: flex;
+}
+.bottom-leave {
+  width: 90%;
+  margin-top: 30rpx;
+  margin-left: -20prx;
+}
+
+.top-leave {
+  width: 40%;
+  height: 100%;
+}
+.image1 {
+  width: 180%;
+  height: 90%;
+  margin-top: -30%;
+  margin-left: -34%;
+}
+
+.right-leave {
+  width: 40%;
+  padding: 50rpx 0 0 40rpx;
+  display: flex;
+}
+.image2 {
+  width: 100%;
+  height: 90%;
+  margin-left: 10%;
+  margin-top: 32%;
+}
+
+.heading {
+  color: var(--white);
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 120rpx;
+  padding-left: 10rpx;
+}
+
+.name {
+  font-size: 90rpx;
+  font-family: var(--oleo);
+  text-shadow: 4rpx 4rpx var(--gold);
+}
+
+.line {
+  background: var(--gold);
+  height: 3rpx;
+  width: 180%;
+}
+
+.message {
+  font-size: 36rpx;
+  font-family: var(--oleo);
+}

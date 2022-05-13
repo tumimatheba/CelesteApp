@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/menu/menu",
+    "pages/summary/summary",
+    "pages/ThankYou/ThankYou"
+  ],
+  "window": {
+    "defaultTitle": "My App",
+    "titleBarColor": "#08081B"
+  }
+}
