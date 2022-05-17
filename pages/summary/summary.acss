@@ -53,6 +53,8 @@
   padding: 0rpx 40rpx;
 }
 
+
+
 .payment {
   height: 30%;
 }
@@ -105,6 +107,7 @@ radio {
   width: 60rpx;
   opacity: 0;
   margin-left: -14rpx;
+ 
 }
 
 .info {
@@ -117,6 +120,14 @@ radio {
   padding: 0 8rpx;
 }
 
+.checked{
+  border-color: #bf9b30
+}
+.border {
+  height: 30rpx;
+  width: 60rpx;
+  border: 2rpx solid #bf9b30;
+}
 .summary-items-middle {
   display: flex;
   align-items: flex-start;
@@ -149,6 +160,9 @@ radio {
   border: 1px solid var(--white);
   color: var(--white);
 }
+ .input-currency {
+margin-right: 10rpx;
+} *
 
 .total-cost {
   display: flex;

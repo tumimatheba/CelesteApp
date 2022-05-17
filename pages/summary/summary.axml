@@ -17,27 +17,30 @@
         </view>
         <view class="cost">
           <text>Cost</text>
-          <text class="price">R {{cost}}.00</text>
+          <text class="price">R {{cost}}</text>
         </view>
         <text class="question">Would you like to add a tip?</text>
       </view>
       <view class="summary-items-middle">
         <radio-group onChange="radioChange">
           <label class="radio" a:for="{{tips}}">
-            <radio value="{{item.percentage}}" checked="{{item.checked}}"/>
-            <text class="info">{{item.value}}</text>
+            <radio value="{{item.percentage}}" />
+            <text class="info {{percentage == item.percentage ?'checked':''}}">{{item.value}}</text>
           </label>
         </radio-group>
-        <text class="price">R {{tip}}.00</text>
+        <text class="price">R {{tip}}</text>
       </view>
       <view class="summary-items-bottom">
-        <view  a:if = "{{custom !== 0}}" class="enter-amount">
+        <view  a:if = "{{percentage === 0}}" class="enter-amount">
           <text>Enter your amount</text>
-          <input onInput="bindKeyInput" class="custom-tip" maxlength="5"/>
+          <view>
+            <text class="input-currency">R</text>
+            <input onInput="bindKeyInput" class="custom-tip" maxlength="5"/>
+          </view>
         </view>
         <view class="total-cost">
           <text>Total Cost</text>
-          <text class="price" id="total">R {{total}}.00</text>
+          <text class="price" id="total">R {{tip == 0? total : total + tip}}</text>
         </view>
       </view>
     </view>

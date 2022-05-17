@@ -4,8 +4,8 @@
   </view>
   <view class="everything">
     <view class="leaves">
-      <image class="leave" src="/Assets/menu/leave1.png"/>
-      <image class="leave" id="right-leave" src="/Assets/menu/leave2.png"/>
+      <image class="leave" src="/assets/menu/leave1.png"/>
+      <image class="leave" id="right-leave" src="/assets/menu/leave2.png"/>
     </view>
     <view class="menu">
       <view a:for="{{menuItems}}">

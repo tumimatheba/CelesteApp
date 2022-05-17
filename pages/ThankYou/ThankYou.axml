@@ -1,8 +1,8 @@
 <view class="cashier-container">
   <view class="page-body">
     <view class="left-leaves">
-      <image class="left-leaf1" src="/Assets/ThankYou/left1.png"/>
-      <image class="left-leaf2" src="/Assets/ThankYou/left2.png"/>
+      <image class="left-leaf1" src="/assets/ThankYou/left1.png"/>
+      <image class="left-leaf2" src="/assets/ThankYou/left2.png"/>
     </view>
     <view class="text">
       <text>Thank you,</text>
@@ -15,8 +15,8 @@
       </view>
     </view>
     <view class="right-leaves">
-      <image class="right-leaf1" src="/Assets/ThankYou/right1.png"/>
-      <image class="right-leaf2" src="/Assets/ThankYou/right2.png"/>
+      <image class="right-leaf1" src="/assets/ThankYou/right1.png"/>
+      <image class="right-leaf2" src="/assets/ThankYou/right2.png"/>
     </view>
   </view>
   <view class="home-button">

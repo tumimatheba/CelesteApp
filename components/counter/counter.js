@@ -1,3 +1,5 @@
+import store from '/services/datastores/cartQuantity'
+
 Component({
   mixins: [],
   data: {},
@@ -11,30 +13,29 @@ Component({
   didUpdate() {},
   didUnmount() {},
   methods: {
-    buttonClick(event) {
+    buttonClick() {
       let count = this.data.count;
-      const getNumberOfPeople = getApp();
-      getNumberOfPeople.data = { selection: count };
-
+   
       if (count !== 0) {
         my.navigateTo({ url: "/pages/summary/summary?selection=" + JSON.stringify(count )});
       }
     },
 
+
     increase() {
-      let count = this.data.count;
+    
       const [, max] = this.props.constraints;
-
-      count = count + 1 > max ? count : ++count;
-
-      this.setData({ count });
+      
+    store.dispatch({ type: 'couterIncremented'});
+     let count = store.getState().count;
+     this.setData({count})
     },
     decrease() {
-      let count = this.data.count;
+    
       const [min] = this.props.constraints;
-      if (count > min) {
-        count -= 1;
-      }
+        store.dispatch({ type: 'counter/decremented' })
+        let count = store.getState().count;
+     
 
       this.setData({ count });
     }
