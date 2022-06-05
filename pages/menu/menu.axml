@@ -9,9 +9,10 @@
     </view>
     <view class="menu">
       <view a:for="{{menuItems}}">
-        <text a:if="{{index % 2 == 0}}" class="menuItems" id="food"> {{item}}</text>
-        <text a:if="{{index % 2 != 0}}" class="menuItems" id="wine"> {{item}}</text>
+        <text  class="menuItems" id="food"> {{item.food}}</text>
+        <text class="menuItems" id="wine"> {{item.winePairing}}</text>
       </view>
+        <button size="default" type="primary" onTap=" getAuthCode">Programatically Authenticate</button>
     </view>
   </view>
   <view class="order">

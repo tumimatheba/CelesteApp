@@ -1,7 +1,11 @@
-import store from '/services/datastores/cartQuantity'
+// import store from '/services/datastores/cartQuantity'
+import store from '../../services/datastores/store'
+
+
+
 Page({
   data: {
-    perPerson: 100,
+    // pricePerPerson: 0,
 
     tips: [
       { percentage: 0.1, value: "10%"},
@@ -10,16 +14,18 @@ Page({
       { percentage: 0, value: "custom"}
     ],
 
-    tip: (0).toFixed(2)
+    tip: 0
   },
 
   onLoad() {
     let tip = this.data.tip;
     this.setData({ tip });
-
+const pricePerPerson = store.getState().pricePerPerson;
+this.setData({pricePerPerson});
      let people = store.getState().count;
      this.setData({people})
-    const cost = (people * this.data.perPerson) 
+      console.log(people)
+    const cost = (people * this.data.pricePerPerson) 
     this.setData({ cost });
     let total = cost;
     this.setData({ total });
@@ -44,7 +50,8 @@ Page({
   },
 
   bindKeyInput(e) {
-    let tip = e.detail.value;
+    let tip = parseFloat(e.detail.value);
+   
     this.setData({ tip });
 
     if (tip < 0 || isNaN(tip)) {
@@ -59,6 +66,6 @@ Page({
   },
 
   buttonTap() {
-    my.navigateTo({ url: "/pages/ThankYou/ThankYou" });
+    my.navigateTo({ url: "/pages/thankYou/thankYou" });
   }
 });

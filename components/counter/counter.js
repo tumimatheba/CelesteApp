@@ -1,11 +1,12 @@
-import store from '/services/datastores/cartQuantity'
+
+import store from '../../services/datastores/store'
 
 Component({
   mixins: [],
   data: {},
   props: {
     count: 1,
-    constraints: [0, 60]
+    constraints: [0, 10]
   },
   didMount() {
     this.setData({ count: this.props.count });
@@ -21,22 +22,21 @@ Component({
       }
     },
 
-
-    increase() {
-    
-      const [, max] = this.props.constraints;
-      
-    store.dispatch({ type: 'couterIncremented'});
+   increase() {
      let count = store.getState().count;
+      store.dispatch({ type: 'counterIncremented'});
+      const [, max] = this.props.constraints;
+      if (max >= count) {
+     
      this.setData({count})
+      }
+    
     },
     decrease() {
     
-      const [min] = this.props.constraints;
-        store.dispatch({ type: 'counter/decremented' })
+    
+       store.dispatch({ type: 'counterDecremented' })
         let count = store.getState().count;
-     
-
       this.setData({ count });
     }
   }

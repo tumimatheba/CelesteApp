@@ -7,13 +7,13 @@
       <view class="summary-items-top">
         <view class="per-person">
           <text>Tasting Menu</text>
-          <text class="price">R{{perPerson}}pp</text>
+          <text class="price">R{{pricePerPerson}}pp</text>
         </view>
         <view class="people">
           <text >Number of Persons</text>
-          <text class="price">{{selection}}
-            <text class="no-of-people" a:if = "{{selection === 1}}">person</text>
-            <text class="no-of-people"  a:if = "{{selection > 1}}">people</text></text>
+          <text class="price">{{people}}
+            <text class="no-of-people" a:if = "{{people === 1}}">person</text>
+            <text class="no-of-people"  a:if = "{{people > 1}}">people</text></text>
         </view>
         <view class="cost">
           <text>Cost</text>

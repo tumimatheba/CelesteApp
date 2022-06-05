@@ -3,7 +3,7 @@
     "pages/index/index",
     "pages/menu/menu",
     "pages/summary/summary",
-    "pages/ThankYou/ThankYou"
+    "pages/thankYou/thankYou"
   ],
   "window": {
     "defaultTitle": "My App",
