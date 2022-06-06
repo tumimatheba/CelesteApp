@@ -1,5 +1,5 @@
 import store from "../../services/datastores/store";
-import  {getAuthCode}  from '../../services/auth/authoutization';
+
 Page({
   data: {
    menuItems: []

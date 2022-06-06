@@ -11,8 +11,7 @@
       <view a:for="{{menuItems}}">
         <text  class="menuItems" id="food"> {{item.food}}</text>
         <text class="menuItems" id="wine"> {{item.winePairing}}</text>
-      </view>
-        <button size="default" type="primary" onTap=" getAuthCode">Programatically Authenticate</button>
+      </view>   
     </view>
   </view>
   <view class="order">

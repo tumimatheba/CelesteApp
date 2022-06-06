@@ -39,10 +39,10 @@ const getTokenFromTestEnv = async () => {
     scopes: authScopes.join()
   };
   const response = await request(url, headers, data, method);
-console.log(response.data.authCode)
+console.log( response.data.authCode)
   return response.data.authCode;
 };
-
+re
 
 // import and runthis function to get an auth code in your mini app
 export const getAuthCode = async () => {

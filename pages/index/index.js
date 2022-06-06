@@ -1,5 +1,4 @@
 import {getAuthCode} from '../../services/auth/authoutization'
-import { request } from '../../services/auth/request';
 
 Page({
 

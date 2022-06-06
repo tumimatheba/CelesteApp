@@ -1,6 +1,6 @@
-// import store from '/services/datastores/cartQuantity'
-import store from '../../services/datastores/store'
 
+import store from '../../services/datastores/store'
+import { paymentRequest } from '../../services/pay/payment';
 
 
 Page({
@@ -8,10 +8,10 @@ Page({
     // pricePerPerson: 0,
 
     tips: [
-      { percentage: 0.1, value: "10%"},
-      { percentage: 0.2, value: "20%"  },
+      { percentage: 0.1, value: "10%" },
+      { percentage: 0.2, value: "20%" },
       { percentage: 0.3, value: "30%" },
-      { percentage: 0, value: "custom"}
+      { percentage: 0, value: "custom" }
     ],
 
     tip: 0
@@ -20,12 +20,12 @@ Page({
   onLoad() {
     let tip = this.data.tip;
     this.setData({ tip });
-const pricePerPerson = store.getState().pricePerPerson;
-this.setData({pricePerPerson});
-     let people = store.getState().count;
-     this.setData({people})
-      console.log(people)
-    const cost = (people * this.data.pricePerPerson) 
+    const pricePerPerson = store.getState().pricePerPerson;
+    this.setData({ pricePerPerson });
+    let people = store.getState().count;
+    this.setData({ people })
+    console.log(people)
+    const cost = (people * this.data.pricePerPerson)
     this.setData({ cost });
     let total = cost;
     this.setData({ total });
@@ -33,17 +33,15 @@ this.setData({pricePerPerson});
 
   radioChange(e) {
     let percentage = e.detail.value;
-    
+
     console.log(percentage)
     this.setData({ percentage });
     let tip = this.data.tip;
-   let cost = parseFloat(this.data.cost);
+    let cost = parseFloat(this.data.cost);
 
     if (percentage !== 0) {
       tip = cost * percentage;
       this.setData({ tip });
-      // let total = (cost + parseFloat(tip)).toFixed(2);
-      // this.setData({ total });
     } else {
       this.bindKeyInput(e);
     }
@@ -51,7 +49,6 @@ this.setData({pricePerPerson});
 
   bindKeyInput(e) {
     let tip = parseFloat(e.detail.value);
-   
     this.setData({ tip });
 
     if (tip < 0 || isNaN(tip)) {
@@ -59,13 +56,11 @@ this.setData({pricePerPerson});
         content: "Please enter appropriate tip amount",
         buttonText: "OK"
       });
-    } else {
-      // let total = parseFloat(this.data.cost) + parseFloat(tip);
-      // this.setData({ total });
     }
   },
 
-  buttonTap() {
+  makePayment() {
+    // paymentRequest();
     my.navigateTo({ url: "/pages/thankYou/thankYou" });
   }
 });

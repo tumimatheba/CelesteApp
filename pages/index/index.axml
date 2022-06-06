@@ -15,7 +15,7 @@
     </view>
   </view>
   <view class="middle-half">
-   <button size="default" type="primary" onTap="getAuthCode">Programatically Authenticate</button>
+   
     <text class="tasting-menu" onTap="textClick">Tasting menu</text>
   </view>
   <view class="bottom-half">

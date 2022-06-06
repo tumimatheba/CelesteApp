@@ -46,7 +46,7 @@
     </view>
   </view>
   <view class="payment">
-    <button type="primary" onTap="buttonTap">Pay with VodaPay
+    <button type="primary" onTap="makePayment">Pay with VodaPay
     </button>
   </view>
 </view>
