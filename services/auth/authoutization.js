@@ -39,7 +39,7 @@ const getTokenFromTestEnv = async () => {
     scopes: authScopes.join()
   };
   const response = await request(url, headers, data, method);
-  console.log(response.data.authCode)
+   console.log(response.data)
   return response.data.authCode;
 };
 

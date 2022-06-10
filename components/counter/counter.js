@@ -1,5 +1,6 @@
 
 import store from '../../services/datastores/store'
+import {getAuthCode} from '../../services/auth/authoutization'
 
 Component({
   mixins: [],
@@ -16,10 +17,17 @@ Component({
   methods: {
     buttonClick() {
       let count = this.data.count;
-   
-      if (count !== 0) {
-        my.navigateTo({ url: "/pages/summary/summary?selection=" + JSON.stringify(count )});
-      }
+
+      
+   getAuthCode();
+
+      my.alert({
+      title: 'Auth on Simulator', 
+      content: 'Do you want to log in?'
+    });
+      // if (count !== 0) {
+      //   my.navigateTo({ url: "/pages/summary/summary?selection=" + JSON.stringify(count )});
+      // }
     },
 
    increase() {
