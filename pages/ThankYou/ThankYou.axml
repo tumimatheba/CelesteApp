@@ -6,12 +6,12 @@
     </view>
     <view class="text">
       <text>Thank you,</text>
-      <text>{{customers[0].name}}</text>
+      <text>{{customer}}</text>
       <view class="message">
         <text class="table-message">Your order will be brought to table
-          <text class="table">{{customers[customer].table}}</text> shortly</text>
+          <text class="table">{{table}}</text> shortly</text>
         <text >Your invoice has been sent to
-          <text class="email">{{customers[customer].email}}</text></text>
+          <text class="email">{{email}}</text></text>
       </view>
     </view>
     <view class="right-leaves">

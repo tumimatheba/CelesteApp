@@ -8,8 +8,9 @@ App({
 
 
   onLaunch(options) {
-   initializePrice();
-    initializeMenu();
+     initializePrice();
+      initializeMenu();
+     
 
     console.info('App onLaunch');
   },

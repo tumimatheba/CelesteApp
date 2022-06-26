@@ -1,6 +1,6 @@
 
 import store from '../../services/datastores/store'
-import {getAuthCode} from '../../services/auth/authoutization'
+// import userLogin from '../../services/login/login'
 
 Component({
   mixins: [],
@@ -15,19 +15,19 @@ Component({
   didUpdate() {},
   didUnmount() {},
   methods: {
+
+
+
+
+
+
     buttonClick() {
       let count = this.data.count;
 
-      
-   getAuthCode();
-
-      my.alert({
-      title: 'Auth on Simulator', 
-      content: 'Do you want to log in?'
-    });
-      // if (count !== 0) {
-      //   my.navigateTo({ url: "/pages/summary/summary?selection=" + JSON.stringify(count )});
-      // }
+       
+      if (count !== 0) {
+        my.navigateTo({ url: "/pages/summary/summary?selection=" + JSON.stringify(count )});
+      }
     },
 
    increase() {

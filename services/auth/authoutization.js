@@ -1,13 +1,13 @@
 import { request } from './request';
 
-// const { BASE_URL, CLIENT_ID, isDevice, authScopes, userId } = app.data;
-const BASE_URL = 'localhost:3000' // Your api's domain
-const CLIENT_ID = "2020122653946739963336" // the client id you are using on your backend
-const isDevice = process.env.NODE_ENV !== 'development' // checks if running on device or in simulator
-const userId = '216610000000446291765' // use the id in the postman collection environment i sent
+
+const BASE_URL = 'http://localhost:3000' 
+const CLIENT_ID = "2020122653946739963336" 
+const isDevice = process.env.NODE_ENV !== 'development' 
+const userId = '216610000000446291765' 
 const authScopes = ['auth_user']
 
-// my.getAuthCode can only run when on device. We run this piece of code when isDevice is true
+
 const getTokenFromJSAPI = async () => {
   return new Promise((resolve, reject) => {
     my.getAuthCode({
@@ -22,8 +22,6 @@ const getTokenFromJSAPI = async () => {
   });
 };
 
-
-//when isDevice is false we run this to simulate getting an auth Code. This allows us to get an auth code when in simulator
 const getTokenFromTestEnv = async () => {
   const method = 'POST';
   const headers = {
@@ -39,16 +37,16 @@ const getTokenFromTestEnv = async () => {
     scopes: authScopes.join()
   };
   const response = await request(url, headers, data, method);
-   console.log(response.data)
+  
   return response.data.authCode;
 };
 
-// import and runthis function to get an auth code in your mini app
+
 export const getAuthCode = async () => {
   if (isDevice) {
     return getTokenFromJSAPI();
   }
+  return getTokenFromTestEnv()
 
-  return getTokenFromTestEnv();
 };
 

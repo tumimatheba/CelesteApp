@@ -1,19 +1,13 @@
-
 import store from '../../services/datastores/store'
-import { paymentRequest } from '../../services/pay/payment';
-
 
 Page({
   data: {
-    // pricePerPerson: 0,
-
     tips: [
       { percentage: 0.1, value: "10%" },
       { percentage: 0.2, value: "20%" },
       { percentage: 0.3, value: "30%" },
       { percentage: 0, value: "custom" }
     ],
-
     tip: 0
   },
 
@@ -24,7 +18,6 @@ Page({
     this.setData({ pricePerPerson });
     let people = store.getState().count;
     this.setData({ people })
-    console.log(people)
     const cost = (people * this.data.pricePerPerson)
     this.setData({ cost });
     let total = cost;
@@ -33,8 +26,6 @@ Page({
 
   radioChange(e) {
     let percentage = e.detail.value;
-
-    console.log(percentage)
     this.setData({ percentage });
     let tip = this.data.tip;
     let cost = parseFloat(this.data.cost);
@@ -59,8 +50,32 @@ Page({
     }
   },
 
-  makePayment() {
-    // paymentRequest();
+  async makePayment() {
+    const total = this.data.total + this.data.tip;
+    const amount = total.toFixed(2).split('.').join('')
+    const userId = store.getState().userId;
+
+    const response = await my.request({
+      url: "https://itu-celeste-app.herokuapp.com/payment",
+      method: "POST",
+      data: { userId,amount }
+
+    });
+
+    my.tradePay({
+      paymentUrl: response.data.redirectActionForm.redirectUrl,
+      success: (res) => {
+        my.alert({
+          content: JSON.stringify(res),
+        });
+      },
+      fail: (res) => {
+        my.alert({
+          content: JSON.stringify(res),
+        });
+      }
+    });
+
     my.navigateTo({ url: "/pages/thankYou/thankYou" });
   }
 });

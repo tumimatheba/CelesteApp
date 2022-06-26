@@ -8,6 +8,7 @@ const request = async (url, headers, data, method) => {
     method: method,
     data: data,
     timeout: 30000
+ 
   });
 };
 

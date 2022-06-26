@@ -1,26 +1,14 @@
 <view class="summary-container">
-  <view class="heading-container">
+   <view class="heading-container">
     <text class="summary-heading">Summary</text>
   </view>
-  <view class="item-container">
-    <view class="summary-items">
-      <view class="summary-items-top">
-        <view class="per-person">
-          <text>Tasting Menu</text>
-          <text class="price">R{{pricePerPerson}}pp</text>
-        </view>
-        <view class="people">
-          <text >Number of Persons</text>
-          <text class="price">{{people}}
-            <text class="no-of-people" a:if = "{{people === 1}}">person</text>
-            <text class="no-of-people"  a:if = "{{people > 1}}">people</text></text>
-        </view>
-        <view class="cost">
-          <text>Cost</text>
-          <text class="price">R {{cost}}</text>
-        </view>
-        <text class="question">Would you like to add a tip?</text>
-      </view>
+ <view class="item-container">
+   <view class="summary-items">
+   <view class="summary-details">
+   <text class="tasting">Tasting Menu</text>
+    <text class="people">Number of Persons</text>
+    <text class="cost">Cost</text>
+     <text class="question">Would you like to add a tip?</text>
       <view class="summary-items-middle">
         <radio-group onChange="radioChange">
           <label class="radio" a:for="{{tips}}">
@@ -28,25 +16,32 @@
             <text class="info {{percentage == item.percentage ?'checked':''}}">{{item.value}}</text>
           </label>
         </radio-group>
-        <text class="price">R {{tip}}</text>
-      </view>
-      <view class="summary-items-bottom">
+ </view>
+         <view class="custom-tip">
         <view  a:if = "{{percentage === 0}}" class="enter-amount">
           <text>Enter your amount</text>
-          <view>
-            <text class="input-currency">R</text>
-            <input onInput="bindKeyInput" class="custom-tip" maxlength="5"/>
+          </view> 
+          </view> 
+          <text class="total">Total Cost</text>
+        </view> 
+    <view class="summary-prices">
+    <text class="price">R{{pricePerPerson}}pp</text>
+
+ <text class="price">{{people}}
+            <text class="no-of-people" a:if = "{{people === 1}}">person</text>
+            <text class="no-of-people"  a:if = "{{people > 1}}">people</text></text>
+<text class="price">R {{cost}}</text>
+<text class="price" id="tip">R {{tip}}</text>
+<view class="custom" a:if = "{{percentage === 0}}">
+          <text class="input-currency">R</text>
+            <input onInput="bindKeyInput" class="custom-input" maxlength="5"/>
           </view>
-        </view>
-        <view class="total-cost">
-          <text>Total Cost</text>
-          <text class="price" id="total">R {{tip == 0? total : total + tip}}</text>
-        </view>
-      </view>
-    </view>
-  </view>
+           <text class="price" id="total">R {{tip == 0? total : total + tip}}</text>
+   </view>  
+    </view> 
+  </view> 
   <view class="payment">
     <button type="primary" onTap="makePayment">Pay with VodaPay
     </button>
   </view>
-</view>
+</view> 

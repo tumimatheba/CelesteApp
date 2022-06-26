@@ -1,16 +1,15 @@
+import store from "../../services/datastores/store";
+
 Page({
   data: {
-    customers: [
-      { name: "Schmidt", table: 20, email: "schmidt@gmail.com" },
-      { name: "Cece", table: 21, email: "cece@gmail.com" },
-      { name: "Winston", table: 22, email: "winston@gmail.com" },
-      { name: "Jess", table: 23, email: "jess@gmail.com" },
-      { name: "Nick", table: 24, email: "nick@gmail.com" }
-    ]
   },
   onLoad() {
-    const customer = Math.floor(Math.random() * this.data.customers.length);
+    const customer = store.getState().userName;
+    const email = store.getState().userEmail;
+    const table = 1 + Math.floor(Math.random() * 19)
     this.setData({ customer });
+    this.setData({ email });
+    this.setData({ table });
   },
 
   goHome() {

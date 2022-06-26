@@ -4,8 +4,8 @@ import store from "./store";
 const initializePrice = async () => {
 
  const response = await my.request({
-    url: "http://localhost:3000/price",
-    method: "GET"
+    url: "https://itu-celeste-app.herokuapp.com/price",
+    method: "POST"
   });
 
   const price = response.data.price;
