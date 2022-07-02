@@ -1,4 +1,16 @@
 page {
 background: #14141F;
+min-height: 100vh;
+overflow: scroll;
 
+}
+
+@font-face {
+  font-family: "Oleo Script";
+  src: url("./assets/fonts/OleoScript-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("./assets/fonts/Raleway-Regular.ttf");
 }

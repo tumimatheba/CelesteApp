@@ -1,7 +1,7 @@
 import { request } from './request';
 
 
-const BASE_URL = 'http://localhost:3000' 
+
 const CLIENT_ID = "2020122653946739963336" 
 const isDevice = process.env.NODE_ENV !== 'development' 
 const userId = '216610000000446291765' 

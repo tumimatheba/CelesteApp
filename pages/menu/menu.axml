@@ -1,17 +1,17 @@
-<view class= "menu-container">
-  <view class="menu-heading">
-    <text class="tasting">Tasting Menu</text>
+<view class= "page-container">
+  <view class="top-row">
+    <text class="heading">Tasting Menu</text>
   </view>
-  <view class="everything">
+  <view class="menu-container">
     <view class="leaves">
       <image class="leave" src="/assets/menu/leave1.png"/>
       <image class="leave" id="right-leave" src="/assets/menu/leave2.png"/>
     </view>
     <view class="menu">
       <view a:for="{{menuItems}}">
-        <text  class="menuItems" id="food"> {{item.food}}</text>
+        <text class="menuItems" id="food"> {{item.food}}</text>
         <text class="menuItems" id="wine"> {{item.winePairing}}</text>
-      </view>   
+      </view>
     </view>
   </view>
   <view class="order">

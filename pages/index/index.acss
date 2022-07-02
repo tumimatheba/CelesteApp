@@ -10,19 +10,19 @@
   --white: #e6e8ec;
 }
 
-.container {
+.landing-page-container {
   display: flex;
   flex-direction: column;
   height: 100vh;
   overflow: hidden;
 }
 
-.top-half {
+.top-row {
   height: 55%;
   display: flex;
 }
 
-.middle-half {
+.middle-row {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,7 +36,7 @@
   font-weight: 100;
   font-family: var(--raleway);
 }
-.bottom-half {
+.bottom-row {
   height: 35%;
   display: flex;
 }

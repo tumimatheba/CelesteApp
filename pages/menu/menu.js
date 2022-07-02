@@ -1,4 +1,4 @@
-import store from "../../services/datastores/store";
+import store from "../../datastores/store";
 
 Page({
   data: {

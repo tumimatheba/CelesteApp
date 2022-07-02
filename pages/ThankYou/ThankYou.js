@@ -1,4 +1,4 @@
-import store from "../../services/datastores/store";
+import store from "../../datastores/store";
 
 Page({
   data: {
@@ -13,7 +13,7 @@ Page({
   },
 
   goHome() {
-    my.reLaunch({
+   my.reLaunch({
       url: "/pages/index/index"
     });
   }

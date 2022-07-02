@@ -1,4 +1,5 @@
-import store from '../../services/datastores/store'
+import store from '../../datastores/store'
+import { makePayments } from '../../services/payment'
 
 Page({
   data: {
@@ -12,6 +13,7 @@ Page({
   },
 
   onLoad() {
+
     let tip = this.data.tip;
     this.setData({ tip });
     const pricePerPerson = store.getState().pricePerPerson;
@@ -39,43 +41,14 @@ Page({
   },
 
   bindKeyInput(e) {
-    let tip = parseFloat(e.detail.value);
+    let tip = Math.abs(parseFloat(e.detail.value));
     this.setData({ tip });
-
-    if (tip < 0 || isNaN(tip)) {
-      my.alert({
-        content: "Please enter appropriate tip amount",
-        buttonText: "OK"
-      });
-    }
   },
 
   async makePayment() {
     const total = this.data.total + this.data.tip;
-    const amount = total.toFixed(2).split('.').join('')
-    const userId = store.getState().userId;
-
-    const response = await my.request({
-      url: "https://itu-celeste-app.herokuapp.com/payment",
-      method: "POST",
-      data: { userId,amount }
-
-    });
-
-    my.tradePay({
-      paymentUrl: response.data.redirectActionForm.redirectUrl,
-      success: (res) => {
-        my.alert({
-          content: JSON.stringify(res),
-        });
-      },
-      fail: (res) => {
-        my.alert({
-          content: JSON.stringify(res),
-        });
-      }
-    });
-
-    my.navigateTo({ url: "/pages/thankYou/thankYou" });
+    const amount = (total * 100).toString();
+    const pay = await makePayments(amount);
+    return pay
   }
 });

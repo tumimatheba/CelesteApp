@@ -1,9 +1,11 @@
 import { createStore } from 'redux'
 
 function initialDataReducer(
-  state = { count: 1, pricePerPerson: 0, menuItems: [],userName:"",
-        userEmail: "",
-        userId: "" },
+  state = {
+    count: 1, pricePerPerson: 0, menuItems: [], userName: "",
+    userEmail: "",
+    userId: ""
+  },
   action
 ) {
 
@@ -11,7 +13,7 @@ function initialDataReducer(
     case "priceAdded":
       return {
         ...state,
-        
+
         pricePerPerson: action.payload
       };
     case "menuItemsAdded":
@@ -30,18 +32,23 @@ function initialDataReducer(
         ...state,
         count: state.count - 1
       };
-      case "getUserDetails":
-        return {
-          ...state,
+    case "getUserDetails":
+      return {
+        ...state,
         userName: action.payload.name,
         userEmail: action.payload.email,
         userId: action.payload.userId
-        };
+      };
+
+    case "getjsonWebToken":
+      return {
+        ...state,
+        jsonWebToken: action.payload,
+      };
     default:
       return state;
   }
 }
-
 
 let store = createStore(initialDataReducer)
 

@@ -1,5 +1,5 @@
-<view class="container">
-  <view class="top-half">
+<view class="landing-page-container">
+  <view class="top-row">
     <view class="top-leave">
       <image class="image1" src="/assets/index/branch2.svg"/>
     </view>
@@ -14,11 +14,10 @@
       <image class="image2" src="/assets/index/branch3.svg"/>
     </view>
   </view>
-  <view class="middle-half">
-   
-    <text class="tasting-menu" onTap="textClick">Tasting menu</text>
+  <view class="middle-row">
+    <text class="tasting-menu" onTap="seeMenu">Tasting menu</text>
   </view>
-  <view class="bottom-half">
+  <view class="bottom-row">
     <image class="bottom-leave" src="/assets/index/branch.svg"/>
   </view>
 </view>

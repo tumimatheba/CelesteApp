@@ -10,14 +10,14 @@
   --white: #e6e8ec;
 }
 
-.menu-container {
+.page-container {
   text-align: center;
   height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-.menu-heading {
+.top-row {
   color: var(--white);
   display: flex;
   flex-direction: column;
@@ -26,13 +26,13 @@
   height: 10%;
 }
 
-.tasting {
+.heading {
   font-family: var(--oleo);
   font-size: 50rpx;
   text-shadow: 2px 2px var(--gold);
 }
 
-.everything {
+.menu-container {
   height: 60%;
   padding: 60rpx 100rpx;
   text-align: center;

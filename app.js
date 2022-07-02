@@ -1,20 +1,14 @@
-import {initializePrice} from './services/datastores/pricePerPerson'
-import {initializeMenu} from './services/datastores/menuItems'
+import { initializePrice } from './datastores/pricePerPerson'
+import { initializeMenu } from './datastores/menuItems'
 
 App({
-  data: {
-
-  },
-
-
+  data: {},
   onLaunch(options) {
-     initializePrice();
-      initializeMenu();
-     
+    initializePrice();
+    initializeMenu();
 
     console.info('App onLaunch');
   },
   onShow(options) {
-   
   },
 });
